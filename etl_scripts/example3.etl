@@ -1,0 +1,9 @@
+# Example ETL file
+input  = ./input.csv
+output = ./output.csv
+overwrite = false
+
+# ETL Commands
+(A1+C1) -> B3
+(B10) -> H2
+(K22:G18) -> O4:S8

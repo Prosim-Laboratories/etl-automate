@@ -1,0 +1,4 @@
+{
+  "cron": [5, 13, 14, 1],
+  "etl_files": ["example1.etl", "example2.etl", "example3.etl"]
+}

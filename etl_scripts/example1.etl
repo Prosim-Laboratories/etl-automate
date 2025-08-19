@@ -1,0 +1,13 @@
+# Example ETL file
+input  = ./input.xlsx
+output = ./output.xlsx
+overwrite = false
+
+# ETL Commands
+S1(A1+C1) -> S2(A3) 
+(B4+D7) -> E4
+(E11:F12 + E11:F12 * E11:F12) -> B6:C7
+(B16 + C16) -> A7
+(B16 + C16 - B17) -> A8
+
+

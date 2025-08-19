@@ -1,0 +1,25 @@
+{
+  "name": "etl-language",
+  "displayName": "ETL",
+  "description": "Extract Transform Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "etl",
+      "aliases": ["ETL", "etl"],
+      "extensions": [".etl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "etl",
+      "scopeName": "source.etl",
+      "path": "./syntaxes/etl.tmLanguage.json"
+    }]
+  }
+}

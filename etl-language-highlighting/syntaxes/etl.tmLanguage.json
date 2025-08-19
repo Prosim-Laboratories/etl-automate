@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ETL",
+  "scopeName": "source.etl",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#header" },
+    { "include": "#commands" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.etl",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "header": {
+      "patterns": [
+        {
+          "name": "keyword.control.etl",
+          "match": "\\b(input|output|overwrite)\\b"
+        },
+        {
+          "name": "keyword.operator.assignment.etl",
+          "match": "="
+        },
+        {
+          "name": "string.unquoted.path.etl",
+          "match": "\\b(?:\\.\\.?/)?[A-Za-z0-9_./\\\\-]+\\.csv\\b"
+        },
+        {
+          "name": "constant.language.boolean.etl",
+          "match": "\\b(?:true|false)\\b"
+        }
+      ]
+    },
+    "commands": {
+      "patterns": [
+        {
+          "name": "meta.command.expression.etl",
+          "begin": "\\(",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.paren.begin.etl" }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.paren.end.etl" }
+          },
+          "patterns": [
+            {
+              "name": "variable.other.cell-range.etl",
+              "match": "\\b[A-Za-z]+[0-9]+(?::[A-Za-z]+[0-9]+)?\\b"
+            },
+            {
+              "name": "constant.numeric.etl",
+              "match": "\\b\\d+(?:\\.\\d+)?\\b"
+            },
+            {
+              "name": "keyword.operator.arithmetic.etl",
+              "match": "[+\\-*/]"
+            }
+          ]
+        },
+        {
+          "name": "keyword.operator.arrow.etl",
+          "match": "->"
+        },
+        {
+          "name": "meta.command.target.etl",
+          "match": "\\b[A-Za-z]+[0-9]+(?::[A-Za-z]+[0-9]+)?\\b"
+        }
+      ]
+    }
+  },
+  "fileTypes": [ "etl" ]
+}
